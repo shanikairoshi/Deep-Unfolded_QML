@@ -9,22 +9,68 @@ This repository includes the quantum machine learning implementations including
 Here we use qiskit based code and we introduce a novel implmentation of a deep unfolding to provide more interpretability to the optimization process for each of these qiskit algorithms. 
 
 
-# System Setup -DVQC
-Google Colab is a cloud-based platform for running Python programs and machine learning models, where the experiments were conducted. This study used the Qiskit,an open source sdk for quantum computing Machine Learning Framework. Configurations for hardware and software used in this article are as follows:
+# System Setup - DQML with Deep Unfolding
 
-- Python software environment: Python 3.8.15, qiskit 0.41.0 and qiskit-ml 0.7.2 were used for the computations in this study It also required a few more dependencies such as Numpy, Matplotlib and Scikit-learn (to use the dataset)
+The experiments were conducted on **Google Colab**, a cloud-based platform for running Python programs and machine learning models. This study introduced the novel concept of **Deep Unfolding** applied to both **Variational Quantum Classifier (DVQC)** and **Deep Quantum Neural Network (DQNN)**. These experiments leveraged Qiskit, an open-source SDK for quantum computing and machine learning. Below are the hardware and software configurations used in this research:
 
-- Applying Quantum algorithms: Implemented a Variational Quantum Classifier (VQC) using Qiskit. Feature map was ZZFeatureMap and for ansatz the RealAmplitudes were used to encode dataset into quantum circuit.
+### Software Environment
 
-- Optimiser: We created a custom Simultaneous Perturbation Stochastic Approximation (SPSA) for training the model with learnable learning rate and perturbation. The optimizer leveraged meta-learning to tune the learning rate schedule and perturbations. The optimizer was trained with 50 iterations and the momentum factor made it use 0.95 to make smoother calculation of gradient.
+- **Python version**: 3.8.15
+- **Qiskit version**: 0.41.0
+- **Qiskit Machine Learning version**: 0.7.2
+- **Additional Dependencies**: NumPy, Matplotlib, and Scikit-learn for data handling, visualization, and preprocessing.
 
-- Random seed: With random seed 42 set globally to algorithm_globals for reproducibility. random_seed.
-This Iris dataset was taken from the Scikit-learn library. We preprocessed the dataset to standardize features and conducted binary classification for all but one class. A training set was further split with an 80/20 train-test ratio
+### Quantum Neural Network (QNN)
 
-- Callback: we implemented a custom deep unfolding callback to adapt the learning rate and perturbation on-line during optimization. This function performed gradient adjustments using momentum and plotted the objective function, learning rate & perturbation values after each iteration.
+- The QNN classifier was constructed using Qiskit's `QNNCircuit`, which consisted of:
+  - **Feature map**: `ZZFeatureMap` with 2 repetitions.
+  - **Ansatz**: `RealAmplitudes` with 4 repetitions.
+- The model was designed for **binary classification**, with a **parity function** used to interpret quantum circuit outputs.
 
-- Deep unfolding: The model was deep unfolded taking 10 iterations and metrics like training and test accuracy, learning rate, perturbation were stored at each iteration The time it took to train was also recorded and shown on the results.
+### Sampler Quantum Neural Network (SamplerQNN)
 
-- Results logging: results were saved in a CSV file (dvqc_training_results.csv). csv on every iteration for elaborated analysis later.
+- A **SamplerQNN** was defined to simulate quantum circuits and compute expected values.
+- The QNN was parameterized by the feature map and ansatz, with outputs interpreted using the parity function to produce binary classification labels.
 
-The system setup served as a thorough and replicable setting to test the performance of VQC on deep unfolding optimizations.
+### Variational Quantum Classifier (DVQC)
+
+- A **DVQC** was implemented using Qiskit, with:
+  - **Feature Map**: `ZZFeatureMap`.
+  - **Ansatz**: `RealAmplitudes` for encoding the dataset into quantum circuits.
+
+### Novel Concept: Deep Unfolding
+
+- This study introduced the novel approach of applying **Deep Unfolding** to train both the **DVQC** and **DQNN**. Deep unfolding enabled dynamic adjustment of training parameters such as learning rate and perturbation across multiple iterations.
+
+### Optimizer
+
+- A custom **Simultaneous Perturbation Stochastic Approximation (SPSA)** optimizer was used with **learnable learning rate and perturbation**.
+- The optimizer leveraged **meta-learning** to adjust the learning rate and perturbations dynamically. It was trained for **50 iterations**, using a **momentum factor** of 0.95 to smooth gradient calculations.
+
+### Random Seed
+
+- A **global random seed of 42** was set using `algorithm_globals` for reproducibility.
+
+### Dataset
+
+- The **Iris dataset** from Scikit-learn was used, with features standardized for **binary classification**.
+- The dataset was split into an **80/20 train-test ratio**.
+
+### Callback for Learning Rate and Perturbation
+
+- A custom **deep unfolding callback** was implemented to adjust the learning rate and perturbation dynamically during optimization.
+- This function used **momentum** for smoothing gradients and plotted the **objective function**, **learning rate**, and **perturbation** values after each iteration.
+
+### Deep Unfolding Iterations
+
+- The model was trained using **deep unfolding** over **10 iterations**.
+- Key metrics such as **training accuracy**, **test accuracy**, **learning rate**, and **perturbation** were recorded at each iteration.
+- **Training time** was also logged for performance evaluation.
+
+### Results Logging
+
+- All results were saved in a CSV file (`dvqc_training_results.csv`) for detailed analysis after each iteration.
+
+### Conclusion
+
+This setup provided a comprehensive and replicable environment to test the novel application of **Deep Unfolding** to **DVQC** and **DQNN** models. The use of deep unfolding in quantum machine learning presented new opportunities for dynamic optimization in t
