@@ -69,7 +69,7 @@ The experiments were conducted on **Google Colab**, a cloud-based platform for r
 
 ### Results Logging
 
-- All results were saved in a CSV file (`dvqc_training_results.csv`) for detailed analysis after each iteration.
+- All results were saved in a CSV file (`_training_results.csv`) for detailed analysis after each iteration.
 
 ### Conclusion
 
