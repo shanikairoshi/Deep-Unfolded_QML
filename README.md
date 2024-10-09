@@ -9,7 +9,7 @@ This repository includes the quantum machine learning implementations including
 Here we use qiskit based code and we introduce a novel implmentation of a deep unfolding to provide more interpretability to the optimization process for each of these qiskit algorithms. 
 
 
-# System Setup -QVQC
+# System Setup -DVQC
 Google Colab is a cloud-based platform for running Python programs and machine learning models, where the experiments were conducted. This study used the Qiskit,an open source sdk for quantum computing Machine Learning Framework. Configurations for hardware and software used in this article are as follows:
 
 - Python software environment: Python 3.8.15, qiskit 0.41.0 and qiskit-ml 0.7.2 were used for the computations in this study It also required a few more dependencies such as Numpy, Matplotlib and Scikit-learn (to use the dataset)
