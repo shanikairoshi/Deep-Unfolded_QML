@@ -79,7 +79,7 @@ The Genomic dataset consists of gene expression data used for classifying sample
 - **Number of Samples**: Variable
 - **Number of Features**: Several thousand genes (depends on the specific dataset)
 - **Classes**: Variable (depends on the specific classification task)
-- **Dataset Link**: [GEO (Gene Expression Omnibus) Database](https://www.ncbi.nlm.nih.gov/geo/) [https://doi.org/10.1186/s12863-023-01123-8}]
+- **Dataset Link**:  [https://doi.org/10.1186/s12863-023-01123-8}] [https://github.com/ML-Bioinfo-CEITEC/genomic_benchmarks]
 
 ### 4. Qiskit Adhoc Dataset
 The Qiskit Adhoc dataset is a synthetic dataset provided by the Qiskit framework, specifically designed for testing quantum machine learning algorithms, such as Quantum Support Vector Machines (QSVM). This dataset consists of binary classification tasks, where the feature vectors are separable using quantum kernel methods. It allows for benchmarking the performance of quantum classifiers and is particularly useful for evaluating the effectiveness of quantum-enhanced feature spaces.
