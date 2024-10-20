@@ -108,4 +108,4 @@ The Qiskit Adhoc dataset is a synthetic dataset provided by the Qiskit framework
 
 ### Conclusion
 
-This setup provided a comprehensive and replicable environment to test the novel application of **Deep Unfolding** to **DVQC** and **DQNN** models. The use of deep unfolding in quantum machine learning presented new opportunities for dynamic optimization in t
+This setup provided a comprehensive and replicable environment to test the novel application of **Deep Unfolding** to **VQC**, **QSVC**and **QNN** models. The use of deep unfolding in quantum machine learning presented new opportunities for dynamic optimization.
