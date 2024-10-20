@@ -1,0 +1,5 @@
+﻿Dataset,QSVC_Train,QSVC_Test,D_QSVC_Train,D_QSVC_Test
+Adhoc,1,1,0.96,1
+Iris,0.97,0.73,0.963,1
+BreastCancer,0.938,0.879,0.9875,0.975
+Genomic,0.975,0.8,0.9875,0.975
